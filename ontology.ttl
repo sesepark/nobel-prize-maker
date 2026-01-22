@@ -1,0 +1,1598 @@
+@prefix : <http://www.semanticweb.org/ontology/paper#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/ontology/paper> .
+
+<http://www.semanticweb.org/ontology/paper> rdf:type owl:Ontology .
+
+# Classes
+:AcademicResource rdf:type owl:Class .
+:ResearchTopic rdf:type owl:Class .
+
+:Paper rdf:type owl:Class ; rdfs:subClassOf :AcademicResource .
+:BasePaper rdf:type owl:Class ; rdfs:subClassOf :Paper .
+:FollowUpPaper rdf:type owl:Class ; rdfs:subClassOf :Paper .
+
+:BaseTechnology rdf:type owl:Class ; rdfs:subClassOf :ResearchTopic .
+:DataMining rdf:type owl:Class ; rdfs:subClassOf :BaseTechnology .
+:DataPreprocessing rdf:type owl:Class ; rdfs:subClassOf :BaseTechnology .
+
+:KnowledgeExtractionAndExpansion rdf:type owl:Class ; rdfs:subClassOf :ResearchTopic .
+:EntityLinking rdf:type owl:Class ; rdfs:subClassOf :KnowledgeExtractionAndExpansion .
+:KnowledgeGraphConstruction rdf:type owl:Class ; rdfs:subClassOf :KnowledgeExtractionAndExpansion .
+:RelationExtraction rdf:type owl:Class ; rdfs:subClassOf :KnowledgeExtractionAndExpansion .
+
+:OntologyCore rdf:type owl:Class ; rdfs:subClassOf :ResearchTopic .
+:DataModeling rdf:type owl:Class ; rdfs:subClassOf :OntologyCore .
+:Ontology rdf:type owl:Class ; rdfs:subClassOf :OntologyCore .
+:RdfOwl rdf:type owl:Class ; rdfs:subClassOf :OntologyCore .
+
+# Properties
+:extends rdf:type owl:ObjectProperty .
+:critiques rdf:type owl:ObjectProperty .
+:appliesto rdf:type owl:ObjectProperty .
+:cites rdf:type owl:ObjectProperty .
+:Welcome_to_the_Tidyverse rdf:type :Paper, :DataMining ;
+    rdfs:label "Welcome to the Tidyverse"^^xsd:string .
+:Welcome_to_the_Tidyverse :cites :Tidy_Data .
+:Tidy_Data rdf:type :Paper .
+
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "The Structure and Function of Complex Networks"^^xsd:string .
+:The_Structure_and_Function_of_Complex_Networks :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper, :DataModeling ;
+    rdfs:label "The anatomy of a large-scale hypertextual Web search engine"^^xsd:string .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper, :DataMining ;
+    rdfs:label "A program for macromolecular energy, minimization, and dynamics calculations"^^xsd:string .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations :cites :A_relational_model_of_data_for_large_shared_data_banks .
+:A_relational_model_of_data_for_large_shared_data_banks rdf:type :Paper .
+
+:Nonlocal_Neural_Networks rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Non-local Neural Networks"^^xsd:string .
+:Nonlocal_Neural_Networks :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Anomaly_detection rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Anomaly detection"^^xsd:string .
+:Anomaly_detection :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper, :Ontology ;
+    rdfs:label "The igraph software package for complex network research"^^xsd:string .
+:The_igraph_software_package_for_complex_network_research :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+
+:Data_Analysis rdf:type :Paper, :DataModeling ;
+    rdfs:label "Data Analysis"^^xsd:string .
+:Data_Analysis :cites :Tidy_Data .
+:Tidy_Data rdf:type :Paper .
+
+:The_Graph_Neural_Network_Model rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "The Graph Neural Network Model"^^xsd:string .
+:The_Graph_Neural_Network_Model :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Toward_principles_for_the_design_of_ontologies_used_for_knowledge_sharing rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Toward principles for the design of ontologies used for knowledge sharing?"^^xsd:string .
+:Toward_principles_for_the_design_of_ontologies_used_for_knowledge_sharing :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper, :Ontology ;
+    rdfs:label "Opinion Mining and Sentiment Analysis"^^xsd:string .
+:Opinion_Mining_and_Sentiment_Analysis :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:What_is_Twitter_a_social_network_or_a_news_media rdf:type :Paper, :DataMining ;
+    rdfs:label "What is Twitter, a social network or a news media?"^^xsd:string .
+:What_is_Twitter_a_social_network_or_a_news_media :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+
+:The_vision_of_autonomic_computing rdf:type :Paper, :DataMining ;
+    rdfs:label "The vision of autonomic computing"^^xsd:string .
+:The_vision_of_autonomic_computing :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Neural_Collaborative_Filtering rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Neural Collaborative Filtering"^^xsd:string .
+:Neural_Collaborative_Filtering :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:The_Entity_Relationship_Model__Toward_a_Unified_View_of_Data rdf:type :Paper, :EntityLinking ;
+    rdfs:label "The Entity Relationship Model — Toward a Unified View of Data"^^xsd:string .
+:The_Entity_Relationship_Model__Toward_a_Unified_View_of_Data :cites :A_relational_model_of_data_for_large_shared_data_banks .
+:A_relational_model_of_data_for_large_shared_data_banks rdf:type :Paper .
+
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Large-Scale Machine Learning with Stochastic Gradient Descent"^^xsd:string .
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Connectionist_temporal_classification rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Connectionist temporal classification"^^xsd:string .
+:Connectionist_temporal_classification :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Natural Language Processing (almost) from Scratch"^^xsd:string .
+:Natural_Language_Processing_almost_from_Scratch :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Mining_sequential_patterns rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Mining sequential patterns"^^xsd:string .
+:Mining_sequential_patterns :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications rdf:type :Paper, :RdfOwl ;
+    rdfs:label "A Survey on Knowledge Graphs: Representation, Acquisition, and Applications"^^xsd:string .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Neural_Relation_Extraction_with_Selective_Attention_over_Instances .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Link_mining rdf:type :Paper, :DataModeling ;
+    rdfs:label "Link mining"^^xsd:string .
+:Link_mining :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+:Link_mining :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Link_mining :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+:Link_mining :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Knowledge_Graphs rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Knowledge Graphs"^^xsd:string .
+:Knowledge_Graphs :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Knowledge_Graphs :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Knowledge_Graphs :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Knowledge_Graphs :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Joint Extraction of Entities and Relations Based on a Novel Tagging Scheme"^^xsd:string .
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Knowledge graph refinement: A survey of approaches and evaluation methods"^^xsd:string .
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods :cites :Robust_Disambiguation_of_Named_Entities_in_Text .
+:Robust_Disambiguation_of_Named_Entities_in_Text rdf:type :Paper .
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases rdf:type :Paper, :DataModeling ;
+    rdfs:label "Representing Text for Joint Embedding of Text and Knowledge Bases"^^xsd:string .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper, :DataMining ;
+    rdfs:label "A Review of Relational Machine Learning for Knowledge Graphs"^^xsd:string .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:Ontology_Evolution_Not_the_Same_as_Schema_Evolution rdf:type :Paper, :Ontology ;
+    rdfs:label "Ontology Evolution: Not the Same as Schema Evolution"^^xsd:string .
+:Ontology_Evolution_Not_the_Same_as_Schema_Evolution :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Ontology_Evolution_Not_the_Same_as_Schema_Evolution :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+:Ontology_Evolution_Not_the_Same_as_Schema_Evolution :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Sentiment_Analysis_Mining_Opinions_Sentiments_and_Emotions rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Sentiment Analysis: Mining Opinions, Sentiments, and Emotions"^^xsd:string .
+:Sentiment_Analysis_Mining_Opinions_Sentiments_and_Emotions :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Sentiment_Analysis_Mining_Opinions_Sentiments_and_Emotions :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+:Sentiment_Analysis_Mining_Opinions_Sentiments_and_Emotions :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Joint_entity_recognition_and_relation_extraction_as_a_multihead_selection_problem rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Joint entity recognition and relation extraction as a multi-head selection problem"^^xsd:string .
+:Joint_entity_recognition_and_relation_extraction_as_a_multihead_selection_problem :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Joint_entity_recognition_and_relation_extraction_as_a_multihead_selection_problem :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Joint_entity_recognition_and_relation_extraction_as_a_multihead_selection_problem :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Ontology_Matching_A_Machine_Learning_Approach rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Ontology Matching: A Machine Learning Approach"^^xsd:string .
+:Ontology_Matching_A_Machine_Learning_Approach :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Ontology_Matching_A_Machine_Learning_Approach :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+:Ontology_Matching_A_Machine_Learning_Approach :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "A Survey on Deep Learning for Named Entity Recognition"^^xsd:string .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Robust_Disambiguation_of_Named_Entities_in_Text .
+:Robust_Disambiguation_of_Named_Entities_in_Text rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "DeepPath: A Reinforcement Learning Method for Knowledge Graph Reasoning"^^xsd:string .
+:DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Modeling Relation Paths for Representation Learning of Knowledge Bases"^^xsd:string .
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:DocRED_A_LargeScale_DocumentLevel_Relation_Extraction_Dataset rdf:type :Paper, :RdfOwl ;
+    rdfs:label "DocRED: A Large-Scale Document-Level Relation Extraction Dataset"^^xsd:string .
+:DocRED_A_LargeScale_DocumentLevel_Relation_Extraction_Dataset :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:DocRED_A_LargeScale_DocumentLevel_Relation_Extraction_Dataset :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:DocRED_A_LargeScale_DocumentLevel_Relation_Extraction_Dataset :cites :Neural_Relation_Extraction_with_Selective_Attention_over_Instances .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper .
+
+:FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation rdf:type :Paper, :EntityLinking ;
+    rdfs:label "FewRel: A Large-Scale Supervised Few-Shot Relation Classification Dataset with State-of-the-Art Evaluation"^^xsd:string .
+:FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation :cites :Neural_Relation_Extraction_with_Selective_Attention_over_Instances .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper .
+
+:Schema_mediation_in_peer_data_management_systems rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Schema mediation in peer data management systems"^^xsd:string .
+:Schema_mediation_in_peer_data_management_systems :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Schema_mediation_in_peer_data_management_systems :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Enterprise_Data_Analysis_and_Visualization_An_Interview_Study rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Enterprise Data Analysis and Visualization: An Interview Study"^^xsd:string .
+:Enterprise_Data_Analysis_and_Visualization_An_Interview_Study :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Enterprise_Data_Analysis_and_Visualization_An_Interview_Study :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:A_costbased_model_and_effective_heuristic_for_repairing_constraints_by_value_modification rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "A cost-based model and effective heuristic for repairing constraints by value modification"^^xsd:string .
+:A_costbased_model_and_effective_heuristic_for_repairing_constraints_by_value_modification :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:A_costbased_model_and_effective_heuristic_for_repairing_constraints_by_value_modification :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:RiMOM_A_Dynamic_Multistrategy_Ontology_Alignment_Framework rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "RiMOM: A Dynamic Multistrategy Ontology Alignment Framework"^^xsd:string .
+:RiMOM_A_Dynamic_Multistrategy_Ontology_Alignment_Framework :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:RiMOM_A_Dynamic_Multistrategy_Ontology_Alignment_Framework :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+
+:Learning_to_map_between_ontologies_on_the_semantic_web rdf:type :Paper, :Ontology ;
+    rdfs:label "Learning to map between ontologies on the semantic web"^^xsd:string .
+:Learning_to_map_between_ontologies_on_the_semantic_web :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Learning_to_map_between_ontologies_on_the_semantic_web :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:COMA__A_system_for_flexible_combination_of_schema_matching_approaches rdf:type :Paper, :DataModeling ;
+    rdfs:label "COMA — A system for flexible combination of schema matching approaches"^^xsd:string .
+:COMA__A_system_for_flexible_combination_of_schema_matching_approaches :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:COMA__A_system_for_flexible_combination_of_schema_matching_approaches :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:Learning_to_match_ontologies_on_the_Semantic_Web rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Learning to match ontologies on the Semantic Web"^^xsd:string .
+:Learning_to_match_ontologies_on_the_Semantic_Web :cites :A_survey_of_approaches_to_automatic_schema_matching .
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper .
+:Learning_to_match_ontologies_on_the_Semantic_Web :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:Big_data_for_cyber_physical_systems_in_industry_40_a_survey rdf:type :Paper, :DataModeling ;
+    rdfs:label "Big data for cyber physical systems in industry 4.0: a survey"^^xsd:string .
+:Big_data_for_cyber_physical_systems_in_industry_40_a_survey :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+:Big_data_for_cyber_physical_systems_in_industry_40_a_survey :cites :A_relational_model_of_data_for_large_shared_data_banks .
+:A_relational_model_of_data_for_large_shared_data_banks rdf:type :Paper .
+
+:Deep_Contextualized_Word_Representations rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Deep Contextualized Word Representations"^^xsd:string .
+:Deep_Contextualized_Word_Representations :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Deep_Contextualized_Word_Representations :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF rdf:type :Paper, :DataModeling ;
+    rdfs:label "End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF"^^xsd:string .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Sentiment Analysis and Opinion Mining"^^xsd:string .
+:Sentiment_Analysis_and_Opinion_Mining :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Sentiment_Analysis_and_Opinion_Mining :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Neural Architectures for Named Entity Recognition"^^xsd:string .
+:Neural_Architectures_for_Named_Entity_Recognition :cites :Robust_Disambiguation_of_Named_Entities_in_Text .
+:Robust_Disambiguation_of_Named_Entities_in_Text rdf:type :Paper .
+:Neural_Architectures_for_Named_Entity_Recognition :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Visual_Information_Retrieval rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Visual Information Retrieval"^^xsd:string .
+:Visual_Information_Retrieval :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Visual_Information_Retrieval :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+
+:Active_Learning_Literature_Survey rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Active Learning Literature Survey"^^xsd:string .
+:Active_Learning_Literature_Survey :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Active_Learning_Literature_Survey :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:A_Survey_on_the_Explainability_of_Supervised_Machine_Learning rdf:type :Paper, :Ontology ;
+    rdfs:label "A Survey on the Explainability of Supervised Machine Learning"^^xsd:string .
+:A_Survey_on_the_Explainability_of_Supervised_Machine_Learning :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+:A_Survey_on_the_Explainability_of_Supervised_Machine_Learning :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:Web_Service_Modeling_Ontology rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Web Service Modeling Ontology"^^xsd:string .
+:Web_Service_Modeling_Ontology :cites :A_translation_approach_to_portable_ontology_specifications .
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper .
+:Web_Service_Modeling_Ontology :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Information_Extraction rdf:type :Paper, :DataModeling ;
+    rdfs:label "Information Extraction"^^xsd:string .
+:Information_Extraction :cites :A_theory_for_record_linkage .
+:A_theory_for_record_linkage rdf:type :Paper .
+:Information_Extraction :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Evaluation_of_entity_resolution_approaches_on_realworld_match_problems rdf:type :Paper, :DataMining ;
+    rdfs:label "Evaluation of entity resolution approaches on real-world match problems"^^xsd:string .
+:Evaluation_of_entity_resolution_approaches_on_realworld_match_problems :cites :A_theory_for_record_linkage .
+:A_theory_for_record_linkage rdf:type :Paper .
+:Evaluation_of_entity_resolution_approaches_on_realworld_match_problems :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:Conditional_functional_dependencies_for_capturing_data_inconsistencies rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Conditional functional dependencies for capturing data inconsistencies"^^xsd:string .
+:Conditional_functional_dependencies_for_capturing_data_inconsistencies :cites :A_theory_for_record_linkage .
+:A_theory_for_record_linkage rdf:type :Paper .
+:Conditional_functional_dependencies_for_capturing_data_inconsistencies :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:A_Survey_of_Indexing_Techniques_for_Scalable_Record_Linkage_and_Deduplication rdf:type :Paper, :DataModeling ;
+    rdfs:label "A Survey of Indexing Techniques for Scalable Record Linkage and Deduplication"^^xsd:string .
+:A_Survey_of_Indexing_Techniques_for_Scalable_Record_Linkage_and_Deduplication :cites :A_theory_for_record_linkage .
+:A_theory_for_record_linkage rdf:type :Paper .
+:A_Survey_of_Indexing_Techniques_for_Scalable_Record_Linkage_and_Deduplication :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:A_survey_of_heterogeneous_information_network_analysis rdf:type :Paper, :RdfOwl ;
+    rdfs:label "A survey of heterogeneous information network analysis"^^xsd:string .
+:A_survey_of_heterogeneous_information_network_analysis :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:A_survey_of_heterogeneous_information_network_analysis :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Named_Entity_Recognition_in_Tweets_An_Experimental_Study rdf:type :Paper, :DataModeling ;
+    rdfs:label "Named Entity Recognition in Tweets: An Experimental Study"^^xsd:string .
+:Named_Entity_Recognition_in_Tweets_An_Experimental_Study :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Named_Entity_Recognition_in_Tweets_An_Experimental_Study :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article rdf:type :Paper, :DataModeling ;
+    rdfs:label "Jumping NLP Curves: A Review of Natural Language Processing Research [Review Article]"^^xsd:string .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Modeling Relations and Their Mentions without Labeled Text"^^xsd:string .
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Deep_learning_with_word_embeddings_improves_biomedical_named_entity_recognition rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Deep learning with word embeddings improves biomedical named entity recognition"^^xsd:string .
+:Deep_learning_with_word_embeddings_improves_biomedical_named_entity_recognition :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Deep_learning_with_word_embeddings_improves_biomedical_named_entity_recognition :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:A_survey_on_fake_news_and_rumour_detection_techniques rdf:type :Paper, :RdfOwl ;
+    rdfs:label "A survey on fake news and rumour detection techniques"^^xsd:string .
+:A_survey_on_fake_news_and_rumour_detection_techniques :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:A_survey_on_fake_news_and_rumour_detection_techniques :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "A Unified MRC Framework for Named Entity Recognition"^^xsd:string .
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Mining_Text_Data rdf:type :Paper, :DataModeling ;
+    rdfs:label "Mining Text Data"^^xsd:string .
+:Mining_Text_Data :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:Mining_Text_Data :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:AraBERT_Transformerbased_Model_for_Arabic_Language_Understanding rdf:type :Paper, :RdfOwl ;
+    rdfs:label "AraBERT: Transformer-based Model for Arabic Language Understanding"^^xsd:string .
+:AraBERT_Transformerbased_Model_for_Arabic_Language_Understanding :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:AraBERT_Transformerbased_Model_for_Arabic_Language_Understanding :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Linkbased_Classification rdf:type :Paper, :DataMining ;
+    rdfs:label "Link-based Classification"^^xsd:string .
+:Linkbased_Classification :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Linkbased_Classification :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:CamemBERT_a_Tasty_French_Language_Model rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "CamemBERT: a Tasty French Language Model"^^xsd:string .
+:CamemBERT_a_Tasty_French_Language_Model :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:CamemBERT_a_Tasty_French_Language_Model :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Improving_sentiment_analysis_via_sentence_type_classification_using_BiLSTMCRF_and_CNN rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Improving sentiment analysis via sentence type classification using BiLSTM-CRF and CNN"^^xsd:string .
+:Improving_sentiment_analysis_via_sentence_type_classification_using_BiLSTMCRF_and_CNN :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Improving_sentiment_analysis_via_sentence_type_classification_using_BiLSTMCRF_and_CNN :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:FLAT_Chinese_NER_Using_FlatLattice_Transformer rdf:type :Paper, :DataModeling ;
+    rdfs:label "FLAT: Chinese NER Using Flat-Lattice Transformer"^^xsd:string .
+:FLAT_Chinese_NER_Using_FlatLattice_Transformer :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:FLAT_Chinese_NER_Using_FlatLattice_Transformer :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:FineGrained_Entity_Recognition rdf:type :Paper, :DataMining ;
+    rdfs:label "Fine-Grained Entity Recognition"^^xsd:string .
+:FineGrained_Entity_Recognition :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+:FineGrained_Entity_Recognition :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research rdf:type :Paper, :DataMining ;
+    rdfs:label "Jumping NLP Curves: A Review of Natural Language Processing Research"^^xsd:string .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Dataintensive_text_processing_with_MapReduce rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Data-intensive text processing with MapReduce"^^xsd:string .
+:Dataintensive_text_processing_with_MapReduce :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Dataintensive_text_processing_with_MapReduce :cites :Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data .
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper .
+
+:Data_mining_concepts_and_techniques rdf:type :Paper, :DataModeling ;
+    rdfs:label "Data mining: concepts and techniques"^^xsd:string .
+:Data_mining_concepts_and_techniques :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+:Data_mining_concepts_and_techniques :cites :Data_cleaning_Problems_and_current_approaches .
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper .
+
+:CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Cross-Sentence <i>N</i>-ary Relation Extraction with Graph LSTMs"^^xsd:string .
+:CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:QAngaroo_MedHop__WikiHop__Constructing_Datasets_for_Multihop_Reading_Comprehension_Across_Documents rdf:type :Paper, :DataModeling ;
+    rdfs:label "QAngaroo (MedHop + WikiHop) - Constructing Datasets for Multi-hop Reading Comprehension Across Documents"^^xsd:string .
+:QAngaroo_MedHop__WikiHop__Constructing_Datasets_for_Multihop_Reading_Comprehension_Across_Documents :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:QAngaroo_MedHop__WikiHop__Constructing_Datasets_for_Multihop_Reading_Comprehension_Across_Documents :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction rdf:type :Paper, :Ontology ;
+    rdfs:label "Attention Guided Graph Convolutional Networks for Relation Extraction"^^xsd:string .
+:Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Relation_Extraction_Perspective_from_Convolutional_Neural_Networks rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Relation Extraction: Perspective from Convolutional Neural Networks"^^xsd:string .
+:Relation_Extraction_Perspective_from_Convolutional_Neural_Networks :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Relation_Extraction_Perspective_from_Convolutional_Neural_Networks :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Classifying_Relations_via_Long_Short_Term_Memory_Networks_along_Shortest_Dependency_Paths rdf:type :Paper, :DataModeling ;
+    rdfs:label "Classifying Relations via Long Short Term Memory Networks along Shortest Dependency Paths"^^xsd:string .
+:Classifying_Relations_via_Long_Short_Term_Memory_Networks_along_Shortest_Dependency_Paths :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Classifying_Relations_via_Long_Short_Term_Memory_Networks_along_Shortest_Dependency_Paths :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Neural Relation Extraction with Selective Attention over Instances"^^xsd:string .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Graph Convolution over Pruned Dependency Trees Improves Relation Extraction"^^xsd:string .
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Positionaware_Attention_and_Supervised_Data_Improve_Slot_Filling rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Position-aware Attention and Supervised Data Improve Slot Filling"^^xsd:string .
+:Positionaware_Attention_and_Supervised_Data_Improve_Slot_Filling :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Positionaware_Attention_and_Supervised_Data_Improve_Slot_Filling :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:AttentionBased_Bidirectional_Long_ShortTerm_Memory_Networks_for_Relation_Classification rdf:type :Paper, :DataModeling ;
+    rdfs:label "Attention-Based Bidirectional Long Short-Term Memory Networks for Relation Classification"^^xsd:string .
+:AttentionBased_Bidirectional_Long_ShortTerm_Memory_Networks_for_Relation_Classification :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:AttentionBased_Bidirectional_Long_ShortTerm_Memory_Networks_for_Relation_Classification :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Knowledge_vault rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Knowledge vault"^^xsd:string .
+:Knowledge_vault :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:Knowledge_vault :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Distant_Supervision_for_Relation_Extraction_via_Piecewise_Convolutional_Neural_Networks rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Distant Supervision for Relation Extraction via Piecewise Convolutional Neural Networks"^^xsd:string .
+:Distant_Supervision_for_Relation_Extraction_via_Piecewise_Convolutional_Neural_Networks :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:Distant_Supervision_for_Relation_Extraction_via_Piecewise_Convolutional_Neural_Networks :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper, :DataModeling ;
+    rdfs:label "Knowledge Graph Embedding by Translating on Hyperplanes"^^xsd:string .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Learning Entity and Relation Embeddings for Knowledge Graph Completion"^^xsd:string .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Knowledge Graph Embedding: A Survey of Approaches and Applications"^^xsd:string .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Knowledge_Graph_and_Text_Jointly_Embedding rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Knowledge Graph and Text Jointly Embedding"^^xsd:string .
+:Knowledge_Graph_and_Text_Jointly_Embedding :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Knowledge_Graph_and_Text_Jointly_Embedding :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Overview_of_the_TAC_2010_Knowledge_Base_Population_Track rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Overview of the TAC 2010 Knowledge Base Population Track"^^xsd:string .
+:Overview_of_the_TAC_2010_Knowledge_Base_Population_Track :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Overview_of_the_TAC_2010_Knowledge_Base_Population_Track :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:Top_10_algorithms_in_data_mining rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Top 10 algorithms in data mining"^^xsd:string .
+:Top_10_algorithms_in_data_mining :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Top_10_algorithms_in_data_mining :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+
+:AIDriven_Cybersecurity_An_Overview_Security_Intelligence_Modeling_and_Research_Directions rdf:type :Paper, :Ontology ;
+    rdfs:label "AI-Driven Cybersecurity: An Overview, Security Intelligence Modeling and Research Directions"^^xsd:string .
+:AIDriven_Cybersecurity_An_Overview_Security_Intelligence_Modeling_and_Research_Directions :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+:AIDriven_Cybersecurity_An_Overview_Security_Intelligence_Modeling_and_Research_Directions :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:Recommendations_in_locationbased_social_networks_a_survey rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Recommendations in location-based social networks: a survey"^^xsd:string .
+:Recommendations_in_locationbased_social_networks_a_survey :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Recommendations_in_locationbased_social_networks_a_survey :cites :Fast_algorithms_for_mining_association_rules .
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper .
+
+:LUKE_Deep_Contextualized_Entity_Representations_with_Entityaware_Selfattention rdf:type :Paper, :Ontology ;
+    rdfs:label "LUKE: Deep Contextualized Entity Representations with Entity-aware Self-attention"^^xsd:string .
+:LUKE_Deep_Contextualized_Entity_Representations_with_Entityaware_Selfattention :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:LUKE_Deep_Contextualized_Entity_Representations_with_Entityaware_Selfattention :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+
+:A_clinical_text_classification_paradigm_using_weak_supervision_and_deep_representation rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "A clinical text classification paradigm using weak supervision and deep representation"^^xsd:string .
+:A_clinical_text_classification_paradigm_using_weak_supervision_and_deep_representation :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+:A_clinical_text_classification_paradigm_using_weak_supervision_and_deep_representation :cites :Distant_supervision_for_relation_extraction_without_labeled_data .
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper .
+
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "ERNIE: Enhanced Language Representation with Informative Entities"^^xsd:string .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Neural_Relation_Extraction_with_Selective_Attention_over_Instances .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper .
+
+:Ontologies_and_the_semantic_web rdf:type :Paper, :DataMining ;
+    rdfs:label "Ontologies and the semantic web"^^xsd:string .
+:Ontologies_and_the_semantic_web :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+:Ontologies_and_the_semantic_web :cites :Ontology_Learning_for_the_Semantic_Web .
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper .
+
+:A_review_Knowledge_reasoning_over_knowledge_graph rdf:type :Paper, :EntityLinking ;
+    rdfs:label "A review: Knowledge reasoning over knowledge graph"^^xsd:string .
+:A_review_Knowledge_reasoning_over_knowledge_graph :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:A_review_Knowledge_reasoning_over_knowledge_graph :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Observed versus latent features for knowledge base and text inference"^^xsd:string .
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:Computational_Fact_Checking_from_Knowledge_Networks rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Computational Fact Checking from Knowledge Networks"^^xsd:string .
+:Computational_Fact_Checking_from_Knowledge_Networks :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:Computational_Fact_Checking_from_Knowledge_Networks :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:RotatE_Knowledge_Graph_Embedding_by_Relational_Rotation_in_Complexn_Space rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "RotatE: Knowledge Graph Embedding by Relational Rotation in Complex\n Space"^^xsd:string .
+:RotatE_Knowledge_Graph_Embedding_by_Relational_Rotation_in_Complexn_Space :cites :Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base .
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper .
+:RotatE_Knowledge_Graph_Embedding_by_Relational_Rotation_in_Complexn_Space :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Representation Learning of Knowledge Graphs with Entity Descriptions"^^xsd:string .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions :cites :Relation_Classification_via_Convolutional_Deep_Neural_Networks .
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper .
+
+:Knowledge_Enhanced_Contextual_Word_Representations rdf:type :Paper, :Ontology ;
+    rdfs:label "Knowledge Enhanced Contextual Word Representations"^^xsd:string .
+:Knowledge_Enhanced_Contextual_Word_Representations :cites :Robust_Disambiguation_of_Named_Entities_in_Text .
+:Robust_Disambiguation_of_Named_Entities_in_Text rdf:type :Paper .
+:Knowledge_Enhanced_Contextual_Word_Representations :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:Linked_Data_Evolving_the_Web_into_a_Global_Data_Space rdf:type :Paper, :Ontology ;
+    rdfs:label "Linked Data: Evolving the Web into a Global Data Space"^^xsd:string .
+:Linked_Data_Evolving_the_Web_into_a_Global_Data_Space :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Linked_Data_Evolving_the_Web_into_a_Global_Data_Space :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Resource_description_framework rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Resource description framework"^^xsd:string .
+:Resource_description_framework :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Resource_description_framework :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Trust_Management_for_the_Semantic_Web rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Trust Management for the Semantic Web"^^xsd:string .
+:Trust_Management_for_the_Semantic_Web :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Trust_Management_for_the_Semantic_Web :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:A_Survey_of_Fake_News rdf:type :Paper, :DataModeling ;
+    rdfs:label "A Survey of Fake News"^^xsd:string .
+:A_Survey_of_Fake_News :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:A_Survey_of_Fake_News :cites :Translating_Embeddings_for_Modeling_Multirelational_Data .
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper .
+
+:TrustAware_Collaborative_Filtering_for_Recommender_Systems rdf:type :Paper, :DataModeling ;
+    rdfs:label "Trust-Aware Collaborative Filtering for Recommender Systems"^^xsd:string .
+:TrustAware_Collaborative_Filtering_for_Recommender_Systems :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:TrustAware_Collaborative_Filtering_for_Recommender_Systems :cites :The_semantic_web .
+:The_semantic_web rdf:type :Paper .
+
+:Mathematics_for_Machine_Learning rdf:type :Paper, :Ontology ;
+    rdfs:label "Mathematics for Machine Learning"^^xsd:string .
+:Mathematics_for_Machine_Learning :cites :The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web .
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper .
+:Mathematics_for_Machine_Learning :cites :Tidy_Data .
+:Tidy_Data rdf:type :Paper .
+
+:Fast_algorithms_for_mining_association_rules rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Fast algorithms for mining association rules."^^xsd:string .
+
+:A_theory_for_record_linkage rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "A theory for record linkage"^^xsd:string .
+
+:The_PageRank_Citation_Ranking_Bringing_Order_to_the_Web rdf:type :Paper, :DataModeling ;
+    rdfs:label "The PageRank Citation Ranking: Bringing Order to the Web."^^xsd:string .
+
+:A_survey_of_approaches_to_automatic_schema_matching rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "A survey of approaches to automatic schema matching."^^xsd:string .
+
+:Linking_Data_to_Ontologies rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Linking Data to Ontologies"^^xsd:string .
+
+:Data_cleaning_Problems_and_current_approaches rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Data cleaning: Problems and current approaches"^^xsd:string .
+
+:Tidy_Data rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Tidy Data"^^xsd:string .
+
+:Conditional_Random_Fields_Probabilistic_Models_for_Segmenting_and_Labeling_Sequence_Data rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data"^^xsd:string .
+
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Neural Architectures for Named Entity Recognition"^^xsd:string .
+
+:Distant_supervision_for_relation_extraction_without_labeled_data rdf:type :Paper, :Ontology ;
+    rdfs:label "Distant supervision for relation extraction without labeled data"^^xsd:string .
+
+:Relation_Classification_via_Convolutional_Deep_Neural_Networks rdf:type :Paper, :Ontology ;
+    rdfs:label "Relation Classification via Convolutional Deep Neural Networks"^^xsd:string .
+
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper, :DataModeling ;
+    rdfs:label "Neural Relation Extraction with Selective Attention over Instances"^^xsd:string .
+
+:Matching_the_Blanks_Distributional_Similarity_for_Relation_Learning rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Matching the Blanks: Distributional Similarity for Relation Learning"^^xsd:string .
+
+:Robust_Disambiguation_of_Named_Entities_in_Text rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Robust Disambiguation of Named Entities in Text"^^xsd:string .
+
+:Translating_Embeddings_for_Modeling_Multirelational_Data rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Translating Embeddings for Modeling Multi-relational Data"^^xsd:string .
+
+:Random_Walk_Inference_and_Learning_in_a_Large_Scale_Knowledge_Base rdf:type :Paper, :Ontology ;
+    rdfs:label "Random Walk Inference and Learning in a Large Scale Knowledge Base"^^xsd:string .
+
+:Ontology_Learning_for_the_Semantic_Web rdf:type :Paper, :Ontology ;
+    rdfs:label "Ontology Learning for the Semantic Web"^^xsd:string .
+
+:A_translation_approach_to_portable_ontology_specifications rdf:type :Paper, :RdfOwl ;
+    rdfs:label "A translation approach to portable ontology specifications"^^xsd:string .
+
+:A_relational_model_of_data_for_large_shared_data_banks rdf:type :Paper, :RdfOwl ;
+    rdfs:label "A relational model of data for large shared data banks"^^xsd:string .
+
+:The_semantic_web rdf:type :Paper, :RdfOwl ;
+    rdfs:label "The semantic web"^^xsd:string .
+
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "A Survey on Knowledge Graphs: Representation, Acquisition, and Applications"^^xsd:string .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction .
+:Attention_Guided_Graph_Convolutional_Networks_for_Relation_Extraction rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :A_review_Knowledge_reasoning_over_knowledge_graph .
+:A_review_Knowledge_reasoning_over_knowledge_graph rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :RotatE_Knowledge_Graph_Embedding_by_Relational_Rotation_in_Complexn_Space .
+:RotatE_Knowledge_Graph_Embedding_by_Relational_Rotation_in_Complexn_Space rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction .
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper .
+:A_Survey_on_Knowledge_Graphs_Representation_Acquisition_and_Applications :cites :A_Unified_MRC_Framework_for_Named_Entity_Recognition .
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Knowledge Graph Embedding: A Survey of Approaches and Applications"^^xsd:string .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Knowledge_vault .
+:Knowledge_vault rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Knowledge_Graph_and_Text_Jointly_Embedding .
+:Knowledge_Graph_and_Text_Jointly_Embedding rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Modeling_Relations_and_Their_Mentions_without_Labeled_Text .
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods .
+:Knowledge_graph_refinement_A_survey_of_approaches_and_evaluation_methods rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases .
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases rdf:type :Paper .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications :cites :A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper .
+
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition rdf:type :Paper, :Ontology ;
+    rdfs:label "A Survey on Deep Learning for Named Entity Recognition"^^xsd:string .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Named_Entity_Recognition_in_Tweets_An_Experimental_Study .
+:Named_Entity_Recognition_in_Tweets_An_Experimental_Study rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :FineGrained_Entity_Recognition .
+:FineGrained_Entity_Recognition rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme .
+:Joint_Extraction_of_Entities_and_Relations_Based_on_a_Novel_Tagging_Scheme rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :ERNIE_Enhanced_Language_Representation_with_Informative_Entities .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:A_Survey_on_Deep_Learning_for_Named_Entity_Recognition :cites :A_Unified_MRC_Framework_for_Named_Entity_Recognition .
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Pretrained_models_for_natural_language_processing_A_survey rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Pre-trained models for natural language processing: A survey"^^xsd:string .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :Knowledge_Graph_and_Text_Jointly_Embedding .
+:Knowledge_Graph_and_Text_Jointly_Embedding rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :AraBERT_Transformerbased_Model_for_Arabic_Language_Understanding .
+:AraBERT_Transformerbased_Model_for_Arabic_Language_Understanding rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :ERNIE_Enhanced_Language_Representation_with_Informative_Entities .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :CamemBERT_a_Tasty_French_Language_Model .
+:CamemBERT_a_Tasty_French_Language_Model rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions rdf:type :Paper .
+:Pretrained_models_for_natural_language_processing_A_survey :cites :Knowledge_Enhanced_Contextual_Word_Representations .
+:Knowledge_Enhanced_Contextual_Word_Representations rdf:type :Paper .
+
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities rdf:type :Paper, :DataModeling ;
+    rdfs:label "ERNIE: Enhanced Language Representation with Informative Entities"^^xsd:string .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Distant_Supervision_for_Relation_Extraction_via_Piecewise_Convolutional_Neural_Networks .
+:Distant_Supervision_for_Relation_Extraction_via_Piecewise_Convolutional_Neural_Networks rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Knowledge_Graph_and_Text_Jointly_Embedding .
+:Knowledge_Graph_and_Text_Jointly_Embedding rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Neural_Relation_Extraction_with_Selective_Attention_over_Instances .
+:Neural_Relation_Extraction_with_Selective_Attention_over_Instances rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction .
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation .
+:FewRel_A_LargeScale_Supervised_FewShot_Relation_Classification_Dataset_with_StateoftheArt_Evaluation rdf:type :Paper .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities :cites :Positionaware_Attention_and_Supervised_Data_Improve_Slot_Filling .
+:Positionaware_Attention_and_Supervised_Data_Improve_Slot_Filling rdf:type :Paper .
+
+:Convolutional_2D_Knowledge_Graph_Embeddings rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Convolutional 2D Knowledge Graph Embeddings"^^xsd:string .
+:Convolutional_2D_Knowledge_Graph_Embeddings :cites :Knowledge_vault .
+:Knowledge_vault rdf:type :Paper .
+:Convolutional_2D_Knowledge_Graph_Embeddings :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Convolutional_2D_Knowledge_Graph_Embeddings :cites :Observed_versus_latent_features_for_knowledge_base_and_text_inference .
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference rdf:type :Paper .
+:Convolutional_2D_Knowledge_Graph_Embeddings :cites :Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases rdf:type :Paper .
+:Convolutional_2D_Knowledge_Graph_Embeddings :cites :A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper .
+
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "A Review of Relational Machine Learning for Knowledge Graphs"^^xsd:string .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :Knowledge_vault .
+:Knowledge_vault rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :Observed_versus_latent_features_for_knowledge_base_and_text_inference .
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :Link_mining .
+:Link_mining rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent .
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent rdf:type :Paper .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications rdf:type :Paper, :DataMining ;
+    rdfs:label "A Comprehensive Survey of Graph Embedding: Problems, Techniques, and Applications"^^xsd:string .
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications :cites :Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper .
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications :cites :Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper .
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications :cites :Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications .
+:Knowledge_Graph_Embedding_A_Survey_of_Approaches_and_Applications rdf:type :Paper .
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications :cites :Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions .
+:Representation_Learning_of_Knowledge_Graphs_with_Entity_Descriptions rdf:type :Paper .
+:A_Comprehensive_Survey_of_Graph_Embedding_Problems_Techniques_and_Applications :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Graph_neural_networks_A_review_of_methods_and_applications rdf:type :Paper, :Ontology ;
+    rdfs:label "Graph neural networks: A review of methods and applications"^^xsd:string .
+:Graph_neural_networks_A_review_of_methods_and_applications :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:Graph_neural_networks_A_review_of_methods_and_applications :cites :Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases rdf:type :Paper .
+:Graph_neural_networks_A_review_of_methods_and_applications :cites :CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs .
+:CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs rdf:type :Paper .
+:Graph_neural_networks_A_review_of_methods_and_applications :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:A_review_of_affective_computing_From_unimodal_analysis_to_multimodal_fusion rdf:type :Paper, :Ontology ;
+    rdfs:label "A review of affective computing: From unimodal analysis to multimodal fusion"^^xsd:string .
+:A_review_of_affective_computing_From_unimodal_analysis_to_multimodal_fusion :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:A_review_of_affective_computing_From_unimodal_analysis_to_multimodal_fusion :cites :Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article rdf:type :Paper .
+:A_review_of_affective_computing_From_unimodal_analysis_to_multimodal_fusion :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+:A_review_of_affective_computing_From_unimodal_analysis_to_multimodal_fusion :cites :Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research rdf:type :Paper .
+
+:Recent_Trends_in_Deep_Learning_Based_Natural_Language_Processing_Review_Article rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Recent Trends in Deep Learning Based Natural Language Processing [Review Article]"^^xsd:string .
+:Recent_Trends_in_Deep_Learning_Based_Natural_Language_Processing_Review_Article :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Recent_Trends_in_Deep_Learning_Based_Natural_Language_Processing_Review_Article :cites :Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research_Review_Article rdf:type :Paper .
+:Recent_Trends_in_Deep_Learning_Based_Natural_Language_Processing_Review_Article :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Recent_Trends_in_Deep_Learning_Based_Natural_Language_Processing_Review_Article :cites :Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research .
+:Jumping_NLP_Curves_A_Review_of_Natural_Language_Processing_Research rdf:type :Paper .
+
+:Graph_Neural_Networks_A_Review_of_Methods_and_Applications rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Graph Neural Networks: A Review of Methods and Applications"^^xsd:string .
+:Graph_Neural_Networks_A_Review_of_Methods_and_Applications :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:Graph_Neural_Networks_A_Review_of_Methods_and_Applications :cites :Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases .
+:Representing_Text_for_Joint_Embedding_of_Text_and_Knowledge_Bases rdf:type :Paper .
+:Graph_Neural_Networks_A_Review_of_Methods_and_Applications :cites :CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs .
+:CrossSentence_iNiary_Relation_Extraction_with_Graph_LSTMs rdf:type :Paper .
+:Graph_Neural_Networks_A_Review_of_Methods_and_Applications :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Predicting_missing_links_via_local_information rdf:type :Paper, :Ontology ;
+    rdfs:label "Predicting missing links via local information"^^xsd:string .
+:Predicting_missing_links_via_local_information :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Predicting_missing_links_via_local_information :cites :Link_mining .
+:Link_mining rdf:type :Paper .
+:Predicting_missing_links_via_local_information :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Sentiment_analysis_algorithms_and_applications_A_survey rdf:type :Paper, :Ontology ;
+    rdfs:label "Sentiment analysis algorithms and applications: A survey"^^xsd:string .
+:Sentiment_analysis_algorithms_and_applications_A_survey :cites :Mining_Text_Data .
+:Mining_Text_Data rdf:type :Paper .
+:Sentiment_analysis_algorithms_and_applications_A_survey :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:Sentiment_analysis_algorithms_and_applications_A_survey :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+
+:Modeling_Relational_Data_with_Graph_Convolutional_Networks rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Modeling Relational Data with Graph Convolutional Networks"^^xsd:string .
+:Modeling_Relational_Data_with_Graph_Convolutional_Networks :cites :Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases .
+:Modeling_Relation_Paths_for_Representation_Learning_of_Knowledge_Bases rdf:type :Paper .
+:Modeling_Relational_Data_with_Graph_Convolutional_Networks :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+:Modeling_Relational_Data_with_Graph_Convolutional_Networks :cites :Observed_versus_latent_features_for_knowledge_base_and_text_inference .
+:Observed_versus_latent_features_for_knowledge_base_and_text_inference rdf:type :Paper .
+
+:Link_prediction_in_complex_networks_A_survey rdf:type :Paper, :DataModeling ;
+    rdfs:label "Link prediction in complex networks: A survey"^^xsd:string .
+:Link_prediction_in_complex_networks_A_survey :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Link_prediction_in_complex_networks_A_survey :cites :Link_mining .
+:Link_mining rdf:type :Paper .
+:Link_prediction_in_complex_networks_A_survey :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:On_the_Opportunities_and_Risks_of_Foundation_Models rdf:type :Paper, :Ontology ;
+    rdfs:label "On the Opportunities and Risks of Foundation Models"^^xsd:string .
+:On_the_Opportunities_and_Risks_of_Foundation_Models :cites :ERNIE_Enhanced_Language_Representation_with_Informative_Entities .
+:ERNIE_Enhanced_Language_Representation_with_Informative_Entities rdf:type :Paper .
+:On_the_Opportunities_and_Risks_of_Foundation_Models :cites :Knowledge_Enhanced_Contextual_Word_Representations .
+:Knowledge_Enhanced_Contextual_Word_Representations rdf:type :Paper .
+:On_the_Opportunities_and_Risks_of_Foundation_Models :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Personalized_TopN_Sequential_Recommendation_via_Convolutional_Sequence_Embedding rdf:type :Paper, :Ontology ;
+    rdfs:label "Personalized Top-N Sequential Recommendation via Convolutional Sequence Embedding"^^xsd:string .
+:Personalized_TopN_Sequential_Recommendation_via_Convolutional_Sequence_Embedding :cites :Data_mining_concepts_and_techniques .
+:Data_mining_concepts_and_techniques rdf:type :Paper .
+:Personalized_TopN_Sequential_Recommendation_via_Convolutional_Sequence_Embedding :cites :Mining_sequential_patterns .
+:Mining_sequential_patterns rdf:type :Paper .
+:Personalized_TopN_Sequential_Recommendation_via_Convolutional_Sequence_Embedding :cites :Neural_Collaborative_Filtering .
+:Neural_Collaborative_Filtering rdf:type :Paper .
+
+:Machine_Learning_Algorithms_RealWorld_Applications_and_Research_Directions rdf:type :Paper, :DataMining ;
+    rdfs:label "Machine Learning: Algorithms, Real-World Applications and Research Directions"^^xsd:string .
+:Machine_Learning_Algorithms_RealWorld_Applications_and_Research_Directions :cites :AIDriven_Cybersecurity_An_Overview .
+:AIDriven_Cybersecurity_An_Overview rdf:type :Paper .
+:Machine_Learning_Algorithms_RealWorld_Applications_and_Research_Directions :cites :Data_mining_concepts_and_techniques .
+:Data_mining_concepts_and_techniques rdf:type :Paper .
+:Machine_Learning_Algorithms_RealWorld_Applications_and_Research_Directions :cites :Security_Intelligence_Modeling_and_Research_Directions .
+:Security_Intelligence_Modeling_and_Research_Directions rdf:type :Paper .
+:Machine_Learning_Algorithms_RealWorld_Applications_and_Research_Directions :cites :Top_10_algorithms_in_data_mining .
+:Top_10_algorithms_in_data_mining rdf:type :Paper .
+
+:Knowledge_Graph_Embedding_via_Dynamic_Mapping_Matrix rdf:type :Paper, :DataMining ;
+    rdfs:label "Knowledge Graph Embedding via Dynamic Mapping Matrix"^^xsd:string .
+:Knowledge_Graph_Embedding_via_Dynamic_Mapping_Matrix :cites :A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs .
+:A_Review_of_Relational_Machine_Learning_for_Knowledge_Graphs rdf:type :Paper .
+:Knowledge_Graph_Embedding_via_Dynamic_Mapping_Matrix :cites :Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper .
+:Knowledge_Graph_Embedding_via_Dynamic_Mapping_Matrix :cites :Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper .
+
+:Business_Intelligence_and_Analytics_From_Big_Data_to_Big_Impact rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Business Intelligence and Analytics: From Big Data to Big Impact"^^xsd:string .
+:Business_Intelligence_and_Analytics_From_Big_Data_to_Big_Impact :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+:Business_Intelligence_and_Analytics_From_Big_Data_to_Big_Impact :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:Business_Intelligence_and_Analytics_From_Big_Data_to_Big_Impact :cites :Top_10_algorithms_in_data_mining .
+:Top_10_algorithms_in_data_mining rdf:type :Paper .
+
+:BioBERT_a_pretrained_biomedical_language_representation_model_for_biomedical_text_mining rdf:type :Paper, :DataMining ;
+    rdfs:label "BioBERT: a pre-trained biomedical language representation model for biomedical text mining"^^xsd:string .
+:BioBERT_a_pretrained_biomedical_language_representation_model_for_biomedical_text_mining :cites :Deep_Contextualized_Word_Representations .
+:Deep_Contextualized_Word_Representations rdf:type :Paper .
+:BioBERT_a_pretrained_biomedical_language_representation_model_for_biomedical_text_mining :cites :Deep_learning_with_word_embeddings_improves_biomedical_named_entity_recognition .
+:Deep_learning_with_word_embeddings_improves_biomedical_named_entity_recognition rdf:type :Paper .
+
+:Deep_Learning_on_Graphs_A_Survey rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Deep Learning on Graphs: A Survey"^^xsd:string .
+:Deep_Learning_on_Graphs_A_Survey :cites :DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning .
+:DeepPath_A_Reinforcement_Learning_Method_for_Knowledge_Graph_Reasoning rdf:type :Paper .
+:Deep_Learning_on_Graphs_A_Survey :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Data_Mining_Practical_Machine_Learning_Tools_and_Techniques rdf:type :Paper, :Ontology ;
+    rdfs:label "Data Mining: Practical Machine Learning Tools and Techniques"^^xsd:string .
+:Data_Mining_Practical_Machine_Learning_Tools_and_Techniques :cites :Data_mining_concepts_and_techniques .
+:Data_mining_concepts_and_techniques rdf:type :Paper .
+:Data_Mining_Practical_Machine_Learning_Tools_and_Techniques :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Deep_Learning_Methods_and_Applications rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Deep Learning: Methods and Applications"^^xsd:string .
+:Deep_Learning_Methods_and_Applications :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Deep_Learning_Methods_and_Applications :cites :Connectionist_temporal_classification .
+:Connectionist_temporal_classification rdf:type :Paper .
+
+:Frequent_pattern_mining_current_status_and_future_directions rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Frequent pattern mining: current status and future directions"^^xsd:string .
+:Frequent_pattern_mining_current_status_and_future_directions :cites :Data_mining_concepts_and_techniques .
+:Data_mining_concepts_and_techniques rdf:type :Paper .
+:Frequent_pattern_mining_current_status_and_future_directions :cites :Mining_sequential_patterns .
+:Mining_sequential_patterns rdf:type :Paper .
+
+:Heterogeneous_Graph_Attention_Network rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Heterogeneous Graph Attention Network"^^xsd:string .
+:Heterogeneous_Graph_Attention_Network :cites :A_survey_of_heterogeneous_information_network_analysis .
+:A_survey_of_heterogeneous_information_network_analysis rdf:type :Paper .
+:Heterogeneous_Graph_Attention_Network :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Pretrain_Prompt_and_Predict_A_Systematic_Survey_of_Prompting_Methods_in_Natural_Language_Processing rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing"^^xsd:string .
+:Pretrain_Prompt_and_Predict_A_Systematic_Survey_of_Prompting_Methods_in_Natural_Language_Processing :cites :Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF rdf:type :Paper .
+:Pretrain_Prompt_and_Predict_A_Systematic_Survey_of_Prompting_Methods_in_Natural_Language_Processing :cites :A_Unified_MRC_Framework_for_Named_Entity_Recognition .
+:A_Unified_MRC_Framework_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Deep_Learning_A_Comprehensive_Overview_on_Techniques_Taxonomy_Applications_and_Research_Directions rdf:type :Paper, :Ontology ;
+    rdfs:label "Deep Learning: A Comprehensive Overview on Techniques, Taxonomy, Applications and Research Directions"^^xsd:string .
+:Deep_Learning_A_Comprehensive_Overview_on_Techniques_Taxonomy_Applications_and_Research_Directions :cites :AIDriven_Cybersecurity_An_Overview .
+:AIDriven_Cybersecurity_An_Overview rdf:type :Paper .
+:Deep_Learning_A_Comprehensive_Overview_on_Techniques_Taxonomy_Applications_and_Research_Directions :cites :Data_mining_concepts_and_techniques .
+:Data_mining_concepts_and_techniques rdf:type :Paper .
+:Deep_Learning_A_Comprehensive_Overview_on_Techniques_Taxonomy_Applications_and_Research_Directions :cites :Security_Intelligence_Modeling_and_Research_Directions .
+:Security_Intelligence_Modeling_and_Research_Directions rdf:type :Paper .
+
+:Graph_based_anomaly_detection_and_description_a_survey rdf:type :Paper, :DataModeling ;
+    rdfs:label "Graph based anomaly detection and description: a survey"^^xsd:string .
+:Graph_based_anomaly_detection_and_description_a_survey :cites :Anomaly_detection .
+:Anomaly_detection rdf:type :Paper .
+:Graph_based_anomaly_detection_and_description_a_survey :cites :Linkbased_Classification .
+:Linkbased_Classification rdf:type :Paper .
+
+:Trajectory_Data_Mining rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Trajectory Data Mining"^^xsd:string .
+:Trajectory_Data_Mining :cites :Recommendations_in_locationbased_social_networks_a_survey .
+:Recommendations_in_locationbased_social_networks_a_survey rdf:type :Paper .
+:Trajectory_Data_Mining :cites :Anomaly_detection .
+:Anomaly_detection rdf:type :Paper .
+
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Learning Entity and Relation Embeddings for Knowledge Graph Completion"^^xsd:string .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion :cites :Modeling_Relations_and_Their_Mentions_without_Labeled_Text .
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text rdf:type :Paper .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion :cites :Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes .
+:Knowledge_Graph_Embedding_by_Translating_on_Hyperplanes rdf:type :Paper .
+
+:Graph_convolutional_networks_a_comprehensive_review rdf:type :Paper, :DataModeling ;
+    rdfs:label "Graph convolutional networks: a comprehensive review"^^xsd:string .
+:Graph_convolutional_networks_a_comprehensive_review :cites :Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction .
+:Graph_Convolution_over_Pruned_Dependency_Trees_Improves_Relation_Extraction rdf:type :Paper .
+:Graph_convolutional_networks_a_comprehensive_review :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Sentiment Analysis and Opinion Mining"^^xsd:string .
+:Sentiment_Analysis_and_Opinion_Mining :cites :Information_Extraction .
+:Information_Extraction rdf:type :Paper .
+:Sentiment_Analysis_and_Opinion_Mining :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+
+:TokenstoToken_ViT_Training_Vision_Transformers_from_Scratch_on_ImageNet rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Tokens-to-Token ViT: Training Vision Transformers from Scratch on ImageNet"^^xsd:string .
+:TokenstoToken_ViT_Training_Vision_Transformers_from_Scratch_on_ImageNet :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:TokenstoToken_ViT_Training_Vision_Transformers_from_Scratch_on_ImageNet :cites :Knowledge_Enhanced_Contextual_Word_Representations .
+:Knowledge_Enhanced_Contextual_Word_Representations rdf:type :Paper .
+
+:KGAT rdf:type :Paper, :DataModeling ;
+    rdfs:label "KGAT"^^xsd:string .
+:KGAT :cites :Neural_Collaborative_Filtering .
+:Neural_Collaborative_Filtering rdf:type :Paper .
+:KGAT :cites :Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion .
+:Learning_Entity_and_Relation_Embeddings_for_Knowledge_Graph_Completion rdf:type :Paper .
+
+:Mining_of_Massive_Datasets rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Mining of Massive Datasets"^^xsd:string .
+:Mining_of_Massive_Datasets :cites :LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent .
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent rdf:type :Paper .
+:Mining_of_Massive_Datasets :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Edge_Intelligence_Paving_the_Last_Mile_of_Artificial_Intelligence_With_Edge_Computing rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Edge Intelligence: Paving the Last Mile of Artificial Intelligence With Edge Computing"^^xsd:string .
+:Edge_Intelligence_Paving_the_Last_Mile_of_Artificial_Intelligence_With_Edge_Computing :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Edge_Intelligence_Paving_the_Last_Mile_of_Artificial_Intelligence_With_Edge_Computing :cites :LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent .
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent rdf:type :Paper .
+
+:Data_mining_concepts_and_techniques rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Data mining: concepts and techniques"^^xsd:string .
+:Data_mining_concepts_and_techniques :cites :Mining_sequential_patterns .
+:Mining_sequential_patterns rdf:type :Paper .
+:Data_mining_concepts_and_techniques :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:A_survey_on_semisupervised_learning rdf:type :Paper, :Ontology ;
+    rdfs:label "A survey on semi-supervised learning"^^xsd:string .
+:A_survey_on_semisupervised_learning :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:A_survey_on_semisupervised_learning :cites :Linkbased_Classification .
+:Linkbased_Classification rdf:type :Paper .
+
+:Relation_Classification_via_Convolutional_Deep_Neural_Network rdf:type :Paper, :Ontology ;
+    rdfs:label "Relation Classification via Convolutional Deep Neural Network"^^xsd:string .
+:Relation_Classification_via_Convolutional_Deep_Neural_Network :cites :Modeling_Relations_and_Their_Mentions_without_Labeled_Text .
+:Modeling_Relations_and_Their_Mentions_without_Labeled_Text rdf:type :Paper .
+:Relation_Classification_via_Convolutional_Deep_Neural_Network :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper, :Ontology ;
+    rdfs:label "Sentiment Analysis and Opinion Mining"^^xsd:string .
+:Sentiment_Analysis_and_Opinion_Mining :cites :Information_Extraction .
+:Information_Extraction rdf:type :Paper .
+:Sentiment_Analysis_and_Opinion_Mining :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+
+:Sentiment_Analysis_and_Subjectivity rdf:type :Paper, :Ontology ;
+    rdfs:label "Sentiment Analysis and Subjectivity"^^xsd:string .
+:Sentiment_Analysis_and_Subjectivity :cites :Information_Extraction .
+:Information_Extraction rdf:type :Paper .
+:Sentiment_Analysis_and_Subjectivity :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF rdf:type :Paper, :RdfOwl ;
+    rdfs:label "End-to-end Sequence Labeling via Bi-directional LSTM-CNNs-CRF"^^xsd:string .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+:Endtoend_Sequence_Labeling_via_Bidirectional_LSTMCNNsCRF :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+
+:Dynamic_Graph_CNN_for_Learning_on_Point_Clouds rdf:type :Paper, :Ontology ;
+    rdfs:label "Dynamic Graph CNN for Learning on Point Clouds"^^xsd:string .
+:Dynamic_Graph_CNN_for_Learning_on_Point_Clouds :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:Dynamic_Graph_CNN_for_Learning_on_Point_Clouds :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:Attentionbased_LSTM_for_Aspectlevel_Sentiment_Classification rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Attention-based LSTM for Aspect-level Sentiment Classification"^^xsd:string .
+:Attentionbased_LSTM_for_Aspectlevel_Sentiment_Classification :cites :Neural_Architectures_for_Named_Entity_Recognition .
+:Neural_Architectures_for_Named_Entity_Recognition rdf:type :Paper .
+:Attentionbased_LSTM_for_Aspectlevel_Sentiment_Classification :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+
+:A_review_on_the_attention_mechanism_of_deep_learning rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "A review on the attention mechanism of deep learning"^^xsd:string .
+:A_review_on_the_attention_mechanism_of_deep_learning :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:A_review_on_the_attention_mechanism_of_deep_learning :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+
+:Understanding_the_Impact_of_Value_Selection_Heuristics_in_Scheduling_Problems rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Understanding the Impact of Value Selection Heuristics in Scheduling Problems"^^xsd:string .
+:Understanding_the_Impact_of_Value_Selection_Heuristics_in_Scheduling_Problems :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+:Understanding_the_Impact_of_Value_Selection_Heuristics_in_Scheduling_Problems :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:VADER_A_Parsimonious_RuleBased_Model_for_Sentiment_Analysis_of_Social_Media_Text rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "VADER: A Parsimonious Rule-Based Model for Sentiment Analysis of Social Media Text"^^xsd:string .
+:VADER_A_Parsimonious_RuleBased_Model_for_Sentiment_Analysis_of_Social_Media_Text :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:VADER_A_Parsimonious_RuleBased_Model_for_Sentiment_Analysis_of_Social_Media_Text :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+
+:Beyond_the_hype_Big_data_concepts_methods_and_analytics rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Beyond the hype: Big data concepts, methods, and analytics"^^xsd:string .
+:Beyond_the_hype_Big_data_concepts_methods_and_analytics :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:Beyond_the_hype_Big_data_concepts_methods_and_analytics :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+
+:Emotions_and_Information_Diffusion_in_Social_MediaSentiment_of_Microblogs_and_Sharing_Behavior rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Emotions and Information Diffusion in Social Media—Sentiment of Microblogs and Sharing Behavior"^^xsd:string .
+:Emotions_and_Information_Diffusion_in_Social_MediaSentiment_of_Microblogs_and_Sharing_Behavior :cites :a_social_network_or_a_news_media .
+:a_social_network_or_a_news_media rdf:type :Paper .
+:Emotions_and_Information_Diffusion_in_Social_MediaSentiment_of_Microblogs_and_Sharing_Behavior :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:Emotions_and_Information_Diffusion_in_Social_MediaSentiment_of_Microblogs_and_Sharing_Behavior :cites :What_is_Twitter .
+:What_is_Twitter rdf:type :Paper .
+
+:Document_Modeling_with_Gated_Recurrent_Neural_Network_for_Sentiment_Classification rdf:type :Paper, :DataModeling ;
+    rdfs:label "Document Modeling with Gated Recurrent Neural Network for Sentiment Classification"^^xsd:string .
+:Document_Modeling_with_Gated_Recurrent_Neural_Network_for_Sentiment_Classification :cites :Opinion_Mining_and_Sentiment_Analysis .
+:Opinion_Mining_and_Sentiment_Analysis rdf:type :Paper .
+:Document_Modeling_with_Gated_Recurrent_Neural_Network_for_Sentiment_Classification :cites :Sentiment_Analysis_and_Opinion_Mining .
+:Sentiment_Analysis_and_Opinion_Mining rdf:type :Paper .
+
+:Community_detection_in_graphs rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Community detection in graphs"^^xsd:string .
+:Community_detection_in_graphs :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Community_detection_in_graphs :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Maps_of_random_walks_on_complex_networks_reveal_community_structure rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Maps of random walks on complex networks reveal community structure"^^xsd:string .
+:Maps_of_random_walks_on_complex_networks_reveal_community_structure :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Maps_of_random_walks_on_complex_networks_reveal_community_structure :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:The_structure_and_dynamics_of_multilayer_networks rdf:type :Paper, :EntityLinking ;
+    rdfs:label "The structure and dynamics of multilayer networks"^^xsd:string .
+:The_structure_and_dynamics_of_multilayer_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:The_structure_and_dynamics_of_multilayer_networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:The_linkprediction_problem_for_social_networks rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "The link‐prediction problem for social networks"^^xsd:string .
+:The_linkprediction_problem_for_social_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:The_linkprediction_problem_for_social_networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:mclust_5_Clustering_Classification_and_Density_Estimation_Using_Gaussian_Finite_Mixture_Models rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "mclust 5: Clustering, Classification and Density Estimation Using Gaussian Finite Mixture Models"^^xsd:string .
+:mclust_5_Clustering_Classification_and_Density_Estimation_Using_Gaussian_Finite_Mixture_Models :cites :The_igraph_software_package_for_complex_network_research .
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper .
+:mclust_5_Clustering_Classification_and_Density_Estimation_Using_Gaussian_Finite_Mixture_Models :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Big_Data_A_Survey rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Big Data: A Survey"^^xsd:string .
+:Big_Data_A_Survey :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+:Big_Data_A_Survey :cites :Top_10_algorithms_in_data_mining .
+:Top_10_algorithms_in_data_mining rdf:type :Paper .
+
+:Analysis_of_weighted_networks rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Analysis of weighted networks"^^xsd:string .
+:Analysis_of_weighted_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Analysis_of_weighted_networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Networks rdf:type :Paper, :DataMining ;
+    rdfs:label "Networks"^^xsd:string .
+:Networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Word_sense_disambiguation rdf:type :Paper, :EntityLinking ;
+    rdfs:label "Word sense disambiguation"^^xsd:string .
+:Word_sense_disambiguation :cites :Toward_principles_for_the_design_of_ontologies_used_for_knowledge_sharing .
+:Toward_principles_for_the_design_of_ontologies_used_for_knowledge_sharing rdf:type :Paper .
+:Word_sense_disambiguation :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Graph_clustering rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Graph clustering"^^xsd:string .
+:Graph_clustering :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Graph_clustering :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:The_link_prediction_problem_for_social_networks rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "The link prediction problem for social networks"^^xsd:string .
+:The_link_prediction_problem_for_social_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:The_link_prediction_problem_for_social_networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:Using_network_analysis_to_explore_cooccurrence_patterns_in_soil_microbial_communities rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Using network analysis to explore co-occurrence patterns in soil microbial communities"^^xsd:string .
+:Using_network_analysis_to_explore_cooccurrence_patterns_in_soil_microbial_communities :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Using_network_analysis_to_explore_cooccurrence_patterns_in_soil_microbial_communities :cites :The_igraph_software_package_for_complex_network_research .
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper .
+
+:Community_Structure_in_Large_Networks_Natural_Cluster_Sizes_and_the_Absence_of_Large_WellDefined_Clu rdf:type :Paper, :Ontology ;
+    rdfs:label "Community Structure in Large Networks: Natural Cluster Sizes and the Absence of Large Well-Defined Clusters"^^xsd:string .
+:Community_Structure_in_Large_Networks_Natural_Cluster_Sizes_and_the_Absence_of_Large_WellDefined_Clu :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Community_Structure_in_Large_Networks_Natural_Cluster_Sizes_and_the_Absence_of_Large_WellDefined_Clu :cites :Trust_Management_for_the_Semantic_Web .
+:Trust_Management_for_the_Semantic_Web rdf:type :Paper .
+
+:Predicting_positive_and_negative_links_in_online_social_networks rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Predicting positive and negative links in online social networks"^^xsd:string .
+:Predicting_positive_and_negative_links_in_online_social_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+:Predicting_positive_and_negative_links_in_online_social_networks :cites :Trust_Management_for_the_Semantic_Web .
+:Trust_Management_for_the_Semantic_Web rdf:type :Paper .
+
+:A_survey_on_security_issues_in_service_delivery_models_of_cloud_computing rdf:type :Paper, :DataMining ;
+    rdfs:label "A survey on security issues in service delivery models of cloud computing"^^xsd:string .
+:A_survey_on_security_issues_in_service_delivery_models_of_cloud_computing :cites :The_vision_of_autonomic_computing .
+:The_vision_of_autonomic_computing rdf:type :Paper .
+:A_survey_on_security_issues_in_service_delivery_models_of_cloud_computing :cites :Web_Service_Modeling_Ontology .
+:Web_Service_Modeling_Ontology rdf:type :Paper .
+
+:A_survey_and_comparison_of_peertopeer_overlay_network_schemes rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "A survey and comparison of peer-to-peer overlay network schemes"^^xsd:string .
+:A_survey_and_comparison_of_peertopeer_overlay_network_schemes :cites :The_vision_of_autonomic_computing .
+:The_vision_of_autonomic_computing rdf:type :Paper .
+:A_survey_and_comparison_of_peertopeer_overlay_network_schemes :cites :Web_Service_Modeling_Ontology .
+:Web_Service_Modeling_Ontology rdf:type :Paper .
+
+:VMD_Visual_molecular_dynamics rdf:type :Paper, :Ontology ;
+    rdfs:label "VMD: Visual molecular dynamics"^^xsd:string .
+:VMD_Visual_molecular_dynamics :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Glove_Global_Vectors_for_Word_Representation rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Glove: Global Vectors for Word Representation"^^xsd:string .
+:Glove_Global_Vectors_for_Word_Representation :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+
+:Particle_mesh_Ewald_An_iNilogiNi_method_for_Ewald_sums_in_large_systems rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Particle mesh Ewald: An <i>N</i>⋅log(<i>N</i>) method for Ewald sums in large systems"^^xsd:string .
+:Particle_mesh_Ewald_An_iNilogiNi_method_for_Ewald_sums_in_large_systems :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Swin_Transformer_Hierarchical_Vision_Transformer_using_Shifted_Windows rdf:type :Paper, :Ontology ;
+    rdfs:label "Swin Transformer: Hierarchical Vision Transformer using Shifted Windows"^^xsd:string .
+:Swin_Transformer_Hierarchical_Vision_Transformer_using_Shifted_Windows :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+
+:GROMACS_High_performance_molecular_simulations_through_multilevel_parallelism_from_laptops_to_superc rdf:type :Paper, :EntityLinking ;
+    rdfs:label "GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers"^^xsd:string .
+:GROMACS_High_performance_molecular_simulations_through_multilevel_parallelism_from_laptops_to_superc :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:A_Survey_on_Transfer_Learning rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "A Survey on Transfer Learning"^^xsd:string .
+:A_Survey_on_Transfer_Learning :cites :Top_10_algorithms_in_data_mining .
+:Top_10_algorithms_in_data_mining rdf:type :Paper .
+
+:An_Image_is_Worth_16x16_Words_Transformers_for_Image_Recognition_at_Scale rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"^^xsd:string .
+:An_Image_is_Worth_16x16_Words_Transformers_for_Image_Recognition_at_Scale :cites :Nonlocal_Neural_Networks .
+:Nonlocal_Neural_Networks rdf:type :Paper .
+
+:phyloseq_An_R_Package_for_Reproducible_Interactive_Analysis_and_Graphics_of_Microbiome_Census_Data rdf:type :Paper, :RdfOwl ;
+    rdfs:label "phyloseq: An R Package for Reproducible Interactive Analysis and Graphics of Microbiome Census Data"^^xsd:string .
+:phyloseq_An_R_Package_for_Reproducible_Interactive_Analysis_and_Graphics_of_Microbiome_Census_Data :cites :The_igraph_software_package_for_complex_network_research .
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper .
+
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper, :Ontology ;
+    rdfs:label "The Structure and Function of Complex Networks"^^xsd:string .
+:The_Structure_and_Function_of_Complex_Networks :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
+:GROMACS_Fast_flexible_and_free rdf:type :Paper, :EntityLinking ;
+    rdfs:label "GROMACS: Fast, flexible, and free"^^xsd:string .
+:GROMACS_Fast_flexible_and_free :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Deep_learning_in_neural_networks_An_overview rdf:type :Paper, :DataModeling ;
+    rdfs:label "Deep learning in neural networks: An overview"^^xsd:string .
+:Deep_learning_in_neural_networks_An_overview :cites :Connectionist_temporal_classification .
+:Connectionist_temporal_classification rdf:type :Paper .
+
+:Quantum_Mechanical_Continuum_Solvation_Models rdf:type :Paper, :DataModeling ;
+    rdfs:label "Quantum Mechanical Continuum Solvation Models"^^xsd:string .
+:Quantum_Mechanical_Continuum_Solvation_Models :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Development_and_Testing_of_the_OPLS_AllAtom_Force_Field_on_Conformational_Energetics_and_Properties_ rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Development and Testing of the OPLS All-Atom Force Field on Conformational Energetics and Properties of Organic Liquids"^^xsd:string .
+:Development_and_Testing_of_the_OPLS_AllAtom_Force_Field_on_Conformational_Energetics_and_Properties_ :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:AllAtom_Empirical_Potential_for_Molecular_Modeling_and_Dynamics_Studies_of_Proteins rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "All-Atom Empirical Potential for Molecular Modeling and Dynamics Studies of Proteins"^^xsd:string .
+:AllAtom_Empirical_Potential_for_Molecular_Modeling_and_Dynamics_Studies_of_Proteins :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Finding_and_evaluating_community_structure_in_networks rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Finding and evaluating community structure in networks"^^xsd:string .
+:Finding_and_evaluating_community_structure_in_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+
+:Convolutional_Neural_Networks_for_Sentence_Classification rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Convolutional Neural Networks for Sentence Classification"^^xsd:string .
+:Convolutional_Neural_Networks_for_Sentence_Classification :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+
+:Sequence_to_Sequence_Learning_with_Neural_Networks rdf:type :Paper, :DataModeling ;
+    rdfs:label "Sequence to Sequence Learning with Neural Networks"^^xsd:string .
+:Sequence_to_Sequence_Learning_with_Neural_Networks :cites :Connectionist_temporal_classification .
+:Connectionist_temporal_classification rdf:type :Paper .
+
+:Representation_Learning_A_Review_and_New_Perspectives rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Representation Learning: A Review and New Perspectives"^^xsd:string .
+:Representation_Learning_A_Review_and_New_Perspectives :cites :Natural_Language_Processing_almost_from_Scratch .
+:Natural_Language_Processing_almost_from_Scratch rdf:type :Paper .
+
+:Modularity_and_community_structure_in_networks rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Modularity and community structure in networks"^^xsd:string .
+:Modularity_and_community_structure_in_networks :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+
+:Complex_network_measures_of_brain_connectivity_Uses_and_interpretations rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Complex network measures of brain connectivity: Uses and interpretations"^^xsd:string .
+:Complex_network_measures_of_brain_connectivity_Uses_and_interpretations :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+
+:SWISSMODEL_and_the_SwissPdb_Viewer_An_environment_for_comparative_protein_modeling rdf:type :Paper, :DataModeling ;
+    rdfs:label "SWISS‐MODEL and the Swiss‐Pdb Viewer: An environment for comparative protein modeling"^^xsd:string .
+:SWISSMODEL_and_the_SwissPdb_Viewer_An_environment_for_comparative_protein_modeling :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Nonlocal_Neural_Networks rdf:type :Paper, :DataMining ;
+    rdfs:label "Non-local Neural Networks"^^xsd:string .
+:Nonlocal_Neural_Networks :cites :The_Graph_Neural_Network_Model .
+:The_Graph_Neural_Network_Model rdf:type :Paper .
+
+:STRING_v10_proteinprotein_interaction_networks_integrated_over_the_tree_of_life rdf:type :Paper, :DataModeling ;
+    rdfs:label "STRING v10: protein–protein interaction networks, integrated over the tree of life"^^xsd:string .
+:STRING_v10_proteinprotein_interaction_networks_integrated_over_the_tree_of_life :cites :The_igraph_software_package_for_complex_network_research .
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper .
+
+:Complex_networks_Structure_and_dynamics rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Complex networks: Structure and dynamics"^^xsd:string .
+:Complex_networks_Structure_and_dynamics :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+
+:Automated_docking_using_a_Lamarckian_genetic_algorithm_and_an_empirical_binding_free_energy_function rdf:type :Paper, :DataPreprocessing ;
+    rdfs:label "Automated docking using a Lamarckian genetic algorithm and an empirical binding free energy function"^^xsd:string .
+:Automated_docking_using_a_Lamarckian_genetic_algorithm_and_an_empirical_binding_free_energy_function :cites :A_program_for_macromolecular_energy_minimization_and_dynamics_calculations .
+:A_program_for_macromolecular_energy_minimization_and_dynamics_calculations rdf:type :Paper .
+
+:Anomaly_detection rdf:type :Paper, :KnowledgeGraphConstruction ;
+    rdfs:label "Anomaly detection"^^xsd:string .
+:Anomaly_detection :cites :Mining_sequential_patterns .
+:Mining_sequential_patterns rdf:type :Paper .
+
+:Consensus_and_Cooperation_in_Networked_MultiAgent_Systems rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "Consensus and Cooperation in Networked Multi-Agent Systems"^^xsd:string .
+:Consensus_and_Cooperation_in_Networked_MultiAgent_Systems :cites :The_Structure_and_Function_of_Complex_Networks .
+:The_Structure_and_Function_of_Complex_Networks rdf:type :Paper .
+
+:cryoSPARC_algorithms_for_rapid_unsupervised_cryoEM_structure_determination rdf:type :Paper, :RelationExtraction ;
+    rdfs:label "cryoSPARC: algorithms for rapid unsupervised cryo-EM structure determination"^^xsd:string .
+:cryoSPARC_algorithms_for_rapid_unsupervised_cryoEM_structure_determination :cites :LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent .
+:LargeScale_Machine_Learning_with_Stochastic_Gradient_Descent rdf:type :Paper .
+
+:phytools_an_R_package_for_phylogenetic_comparative_biology_and_other_things rdf:type :Paper, :DataMining ;
+    rdfs:label "phytools: an R package for phylogenetic comparative biology (and other things)"^^xsd:string .
+:phytools_an_R_package_for_phylogenetic_comparative_biology_and_other_things :cites :The_igraph_software_package_for_complex_network_research .
+:The_igraph_software_package_for_complex_network_research rdf:type :Paper .
+
+:Authoritative_sources_in_a_hyperlinked_environment rdf:type :Paper, :RdfOwl ;
+    rdfs:label "Authoritative sources in a hyperlinked environment"^^xsd:string .
+:Authoritative_sources_in_a_hyperlinked_environment :cites :The_anatomy_of_a_largescale_hypertextual_Web_search_engine .
+:The_anatomy_of_a_largescale_hypertextual_Web_search_engine rdf:type :Paper .
+
