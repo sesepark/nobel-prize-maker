@@ -20,7 +20,7 @@ genai.configure(api_key=api_key)
 # [수정] 요청하신 모델명 적용 (gemini-pro-3-preview)
 # ※ 주의: 해당 모델명이 실제 Google AI Studio에서 유효한지 확인해주세요.
 # 만약 에러가 난다면 'gemini-1.5-pro' 또는 'gemini-2.0-flash-exp' 등으로 변경해야 합니다. gemini-3-pro-preview
-model = genai.GenerativeModel('gemini-3.0-flash')
+model = genai.GenerativeModel('gemini-1.5-flash')
 
 # ==========================================
 # [CSS] 디자인 스타일링 (카드 UI 유지)
