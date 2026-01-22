@@ -11,7 +11,7 @@ st.set_page_config(page_title="Gemini - 노벨상 제조기", page_icon="🏆", 
 # [보안] API 키 설정
 # st.secrets["GEMINI_API_KEY"] 혹은 아래 변수에 직접 입력
 try:
-    api_key = st.secrets["AIzaSyDjesITZRyfEAD2SnX799hR0TjAaQAWo7w"]
+    api_key = st.secrets["GEMINI_API_KEY"]
 except:
     api_key = "YOUR_GEMINI_API_KEY_HERE" 
 
